@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel='icon' href='{% static "img/icono.png" %}' type='image/x-icon'>
+    <link rel='stylesheet' href='{% static "css/normalize.css" %}'>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='{% static "css/style.css" %}'>
+    <link rel="stylesheet" href='{% static "css/hamburgers.css" %}'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block titulo %}
+        <title>Home</title>
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a class="logo" href='{% url "home" %}' class="navegacion__enlace">
+                <img loading='lazy' src='{% static "img/logoNeni.png"  %}' alt='logo' id='logoAgua'>
+            </a>
+        </div>
+
+        <div class="bars">
+            <button class="hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href='{% url "home" %}' class="navegacion__enlace">Inicio</a>
+                <li>
+                    <a href='{% url "planes" %}' class="navegacion__enlace">Planes</a>
+                </li>
+                <li>
+                    <a href='{% url "blog" %}' class="navegacion__enlace">Blog</a>
+                </li>
+                <li>
+                    <div class="opsMoviles">
+                        <a class="navegacion__enlace" href='{% url "login" %}'>Iniciar Sesión</a>
+                        <a class="navegacion__enlace" href='{% url "crearCuenta" %}'>Crear Cuenta</a>
+                    </div>
+                    <div class="opsOrdenadores">
+                        <div class="miCuenta"> <a href="" class="navegacion__enlace">Mi Cuenta</a>
+                            <div class="submenu">
+                                <a class="navegacion__enlace" href='{% url "login" %}'>Iniciar Sesión</a>
+                                <a class="navegacion__enlace" href='{% url "crearCuenta" %}'>Crear Cuenta</a>
+                            </div>
+                        </div>
+                    </div> 
+                </li>
+            </ul>
+        </nav>
+        <script src='{% static "js/nav.js"  %}'></script>
+    </header>
+
+
+    <!-- Main content -->
+    <main>
+        {% block contenido %}
+        {% endblock %}
+        <br><br><br><br>
+    </main>
+    <!-- /.content -->
+   
+
+
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="iconos-social">
+            <li> <a href=""> <img src="/../static/img/facebook.png" alt="Logo facebook"> </a> </li>
+            <li> <a href=""> <img src="/../static/img/instagram.png" alt="Logo Instagram"> </a> </li>
+            <li> <a href=""> <img src="/../static/img/whatsapp.png" alt="Logo Whatsapp"> </a> </li>
+        </ul>
+        <ul class="menu">
+            <li><a href='{% url "home" %}'>Inicio</a></li>
+            <li><a href='{% url "planes" %}'>Planes</a></li>
+            <li><a href='{% url "blog" %}'>Blog</a></li>
+            <li><a href='{% url "crearCuenta" %}' >Iniciar Sesión</a></li>
+        </ul>
+        <p> ©2024 Nenisoft | Todos los Derechos Reservados  </p>
+    </footer>
+
+</body>
+
+</html>
