@@ -699,6 +699,24 @@ th {
 }
 
 /** Inicio de sesion y crear cuenta**/
+.heigt-custom{
+    height: 40px;
+}
+.btn-custom{
+    background-color: var(--morado);
+    border: none;
+    color: white;
+    height: 30px;
+    border-radius: 20px;
+}
+.btn-custom:hover{
+    opacity: 0.9;
+}
+.titulo-color{
+    font-weight: bold;
+    color: var(--morado);
+    margin-top: 30px;
+}
 .divBtns{
     padding-bottom: 10px;
 }
