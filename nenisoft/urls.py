@@ -23,5 +23,5 @@ urlpatterns = [
     #path('administrador', administrador, name='administrador'),
 
     path('', include('home.urls')),
-    path('dashboard/', include('administrador.urls')),
+    path('administrador/', include('administrador.urls')),
 ]

@@ -1,9 +1,9 @@
 from django.urls import path
 
-from administrador.views import dashboard, pedidos, ventas, clientes
+from administrador.views import administrador, pedidos, ventas, clientes
 
 urlpatterns=[
-    path('', dashboard, name='dashboard'),
+    path('', administrador, name='administrador'),
     path('pedidos/', pedidos, name='pedidos'),
     path('ventas/', ventas, name='ventas'),
     path('clientes/', clientes, name='clientes')
