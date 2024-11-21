@@ -1,14 +1,25 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views import View
 
-# Create your views here.
-def administrador(request):
-    return render (request, 'dashboard.html')
+@method_decorator(login_required, name='dispatch')
+class AdministradorView(View):
+    def get(self, request):
+        return render(request, 'dashboard.html')
 
-def pedidos(request):
-    return render (request, 'pedidos.html')
+@method_decorator(login_required, name='dispatch')
+class PedidosView(View):
+    def get(self, request):
+        return render(request, 'pedidos.html')
 
-def ventas(request):
-    return render (request, 'ventas.html')
+@method_decorator(login_required, name='dispatch')
+class VentasView(View):
+    def get(self, request):
+        return render(request, 'ventas.html')
 
-def clientes(request):
-    return render (request, 'clientes.html')
+@method_decorator(login_required, name='dispatch')
+class ClientesView(View):
+    def get(self, request):
+        return render(request, 'clientes.html')
+
