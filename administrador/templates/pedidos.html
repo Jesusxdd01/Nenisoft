@@ -7,7 +7,83 @@
 {% endblock %}
 
 {% block contenidoAdmin %}
-<section>
-    <h1>Pedidos</h1>
-</section>
+<div class="pagetitle">
+  <h1>Pedidos</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'administrador' %}">Administrador</a></li>
+        <li class="breadcrumb-item">Pedidos</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<div class="card">
+  <div class="card-body">
+    <br>
+    <h1 class="titulo-azul">Aún no Hay Pedidos Registrados!</h1>
+    <a class="btn-morado rounded-pill" href="#">Nuevo Pedido</a> <br><br><br>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">ID Pedido</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha (Pedido)</th>
+            <th scope="col">Lugar de Entrega</th>
+            <th scope="col">Fecha (Entrega)</th>
+            <th scope="col">Hora (Entrega)</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Producto.</td>
+            <td>10</td>
+            <td>21/11/2024</td>
+            <td>Parque Xicohténcatl</td>
+            <td>22/11/2024</td>
+            <td>4pm</td>
+            <td>Entrega Pendiente</td>
+            <td>
+              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
+              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>Producto.</td>
+            <td>10</td>
+            <td>21/11/2024</td>
+            <td>Parque Xicohténcatl</td>
+            <td>22/11/2024</td>
+            <td>4pm</td>
+            <td>Entregado</td>
+            <td>
+              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
+              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>Producto.</td>
+            <td>10</td>
+            <td>21/11/2024</td>
+            <td>Parque Xicohténcatl</td>
+            <td>22/11/2024</td>
+            <td>4pm</td>
+            <td>Entregado</td>
+            <td>
+              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
+              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 {% endblock %}

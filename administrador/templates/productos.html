@@ -3,16 +3,16 @@
 {% load static %}
 
 {% block tituloAdministrador %}
-  <title>Clientes</title>
+  <title>Productos</title>
 {% endblock %}
 
 {% block contenidoAdmin %}
 <div class="pagetitle">
-  <h1>Clientes</h1>
+  <h1>Productos</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'administrador' %}">Administrador</a></li>
-        <li class="breadcrumb-item">Clientes</li>
+        <li class="breadcrumb-item">Productos</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -20,55 +20,46 @@
 <div class="card">
   <div class="card-body">
     <br>
-    <h1 class="titulo-azul">Aún no Hay Clientes Registrados!</h1>
-    <a class="btn-morado rounded-pill" href="#">Nuevo Cliente</a> <br><br><br>
+    <h1 class="titulo-azul">Aún no Hay Productos Registrados!</h1>
+    <a class="btn-morado rounded-pill" href="#">Nuevo Producto</a> <br><br><br>
 
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Nombre Completo</th>
-            <th scope="col">Correo Electrónico</th>
-            <th scope="col">Número de Teléfono</th>
-            <th scope="col">Historial</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
             <th scope="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
-            </td>
+            <td>Producto</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+            <td>$500</td>
+            <td>10</td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
               <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
             </td>
           </tr>
           <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
-            </td>
+            <td>Producto</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+            <td>$500</td>
+            <td>10</td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
               <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
             </td>
           </tr>
           <tr>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
-            </td>
+            <td>Producto</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+            <td>$500</td>
+            <td>10</td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
               <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>

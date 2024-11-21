@@ -11,6 +11,7 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  --morado: #4154f1;
 }
 
 body {
@@ -1231,3 +1232,38 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+.titulo-morado{
+  color: var(--morado);
+}
+.titulo-azul{
+  color: #012970;
+}
+.btn-morado{
+  color: white;
+  background-color: var(--morado);
+  border: none;
+  padding: 10px;
+}
+.btn-morado:hover{
+  opacity: 0.9;
+}
+.dec-none{
+  color: inherit; /* Usa el color del texto circundante */ 
+  text-decoration: none; /* Quita subrayado */ 
+  font-weight: normal; /* Restablece el peso de la fuente */ 
+  font-size: inherit; /* Usa el tamaño de fuente circundante */
+}
+.dec-none:hover{
+  color: white;
+}
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Para un desplazamiento más suave en dispositivos móviles */
+}
+
+.table-responsive .table {
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+  min-width: 600px; /* Ajusta esto según el ancho mínimo que necesite tu tabla */
+}
+

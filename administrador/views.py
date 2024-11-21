@@ -22,4 +22,19 @@ class VentasView(View):
 class ClientesView(View):
     def get(self, request):
         return render(request, 'clientes.html')
+    
+@method_decorator(login_required, name='dispatch')
+class ProductosView(View):
+    def get(self, request):
+        return render(request, 'productos.html')
+    
+@method_decorator(login_required, name='dispatch')
+class MiPerfilView(View):
+    def get(self, request):
+        return render(request, 'miPerfil.html')
+    
+@method_decorator(login_required, name='dispatch')
+class PreguntasFrecuentesView(View):
+    def get(self, request):
+        return render(request, 'faq.html')
 

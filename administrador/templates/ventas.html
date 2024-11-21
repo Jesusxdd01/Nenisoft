@@ -7,7 +7,62 @@
 {% endblock %}
 
 {% block contenidoAdmin %}
-<section>
-    <h1>Ventas</h1>
-</section>
+<div class="pagetitle">
+  <h1>Ventas</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'administrador' %}">Administrador</a></li>
+        <li class="breadcrumb-item">Ventas</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<div class="card">
+  <div class="card-body">
+    <br>
+    <h1 class="titulo-azul">Aún no Hay Ventas Registradas!</h1>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">ID Pedido</th>
+            <th scope="col">Importe Total</th>
+            <th scope="col">Cuotas (Total)</th>
+            <th scope="col">Cuotas (Restante)</th>
+            <th scope="col">Importe (Pagado)</th>
+            <th scope="col">Importe (Restante)</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>$900.00</td>
+            <td>9</td>
+            <td>5</td>
+            <td>$500.00</td>
+            <td>$400</td>
+            <td>
+              <a class="btn btn-warning rounded-pill" href="#">Sumar Pago</a>
+              <a class="btn btn-success rounded-pill" href="#">Pago Completo</a>
+            </td>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>$300.00</td>
+            <td>6</td>
+            <td>2</td>
+            <td>$100.00</td>
+            <td>$200</td>
+            <td>
+              <a class="btn btn-warning rounded-pill" href="#">Sumar Pago</a>
+              <a class="btn btn-success rounded-pill" href="#">Pago Completo</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 {% endblock %}
