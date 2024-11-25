@@ -20,9 +20,9 @@
 <div class="card">
   <div class="card-body">
     <br>
-    <h1 class="titulo-azul">Aún no Hay Clientes Registrados!</h1>
-    <a class="btn-morado rounded-pill" href="#">Nuevo Cliente</a> <br><br><br>
+    <a class="btn-morado rounded-pill" href="{% url 'clienteCreate' %}">Nuevo Cliente</a> <br><br><br>
 
+    {% if clientes %}
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -35,48 +35,27 @@
           </tr>
         </thead>
         <tbody>
+          {% for item in clientes %}
           <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefono }}</td>
             <td>
               <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
               <a class="btn btn-success rounded-pill" href="#">Ventas</a>
             </td>
             <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+              <a class="btn btn-secondary rounded-pill" href="{% url 'clienteUpdate' item.id %}">Editar</a>
+              <a class="btn btn-danger rounded-pill" href="{% url 'clienteDelete' item.id %}">Eliminar</a>
             </td>
           </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
-            </td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
-            </td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
+    {% else %}
+      <h1 class="titulo-azul">Aún no Hay Clientes Registrados!</h1>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

@@ -20,9 +20,9 @@
 <div class="card">
   <div class="card-body">
     <br>
-    <h1 class="titulo-azul">Aún no Hay Pedidos Registrados!</h1>
     <a class="btn-morado rounded-pill" href="#">Nuevo Pedido</a> <br><br><br>
 
+    {% if pedidos %}
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -39,51 +39,28 @@
           </tr>
         </thead>
         <tbody>
+          {% for item in pedidos %}
           <tr>
-            <td>01</td>
-            <td>Producto.</td>
-            <td>10</td>
-            <td>21/11/2024</td>
-            <td>Parque Xicohténcatl</td>
-            <td>22/11/2024</td>
-            <td>4pm</td>
-            <td>Entrega Pendiente</td>
+            <td>{{ item.clave }}</td>
+            <td>{{ item.producto.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.fechaEntrega }}</td>
+            <td>{{ item.lugarEntrega }}</td>
+            <td>{{ item.fechaEntrega }}</td>
+            <td>{{ item.horaEntrega }}</td>
+            <td>{{ item.estado }}</td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
               <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
             </td>
           </tr>
-          <tr>
-            <td>01</td>
-            <td>Producto.</td>
-            <td>10</td>
-            <td>21/11/2024</td>
-            <td>Parque Xicohténcatl</td>
-            <td>22/11/2024</td>
-            <td>4pm</td>
-            <td>Entregado</td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Producto.</td>
-            <td>10</td>
-            <td>21/11/2024</td>
-            <td>Parque Xicohténcatl</td>
-            <td>22/11/2024</td>
-            <td>4pm</td>
-            <td>Entregado</td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
+    {% else %}
+      <h1 class="titulo-azul">Aún no Hay Pedidos Registrados!</h1>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

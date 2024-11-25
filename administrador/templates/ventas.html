@@ -20,8 +20,9 @@
 <div class="card">
   <div class="card-body">
     <br>
-    <h1 class="titulo-azul">Aún no Hay Ventas Registradas!</h1>
 
+
+    {% if ventas %}
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -36,33 +37,26 @@
           </tr>
         </thead>
         <tbody>
+          {% for item in ventas %}
           <tr>
-            <td>01</td>
-            <td>$900.00</td>
-            <td>9</td>
-            <td>5</td>
-            <td>$500.00</td>
-            <td>$400</td>
+            <td>{{item.clave}}</td>
+            <td>{{item.importeTotal}}</td>
+            <td>{{item.cuotas}}</td>
+            <td>{{item.cuotasRestantes}}</td>
+            <td>{{item.importePagado}}</td>
+            <td>{{item.importeRestante}}</td>
             <td>
               <a class="btn btn-warning rounded-pill" href="#">Sumar Pago</a>
               <a class="btn btn-success rounded-pill" href="#">Pago Completo</a>
             </td>
           </tr>
-          <tr>
-            <td>01</td>
-            <td>$300.00</td>
-            <td>6</td>
-            <td>2</td>
-            <td>$100.00</td>
-            <td>$200</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Sumar Pago</a>
-              <a class="btn btn-success rounded-pill" href="#">Pago Completo</a>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
+    {% else %}
+      <h1 class="titulo-azul">Aún no Hay Ventas Registradas!</h1>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

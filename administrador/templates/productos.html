@@ -20,9 +20,10 @@
 <div class="card">
   <div class="card-body">
     <br>
-    <h1 class="titulo-azul">Aún no Hay Productos Registrados!</h1>
+
     <a class="btn-morado rounded-pill" href="#">Nuevo Producto</a> <br><br><br>
 
+    {% if productos %}
     <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -35,39 +36,24 @@
           </tr>
         </thead>
         <tbody>
+          {% for item in productos %}
           <tr>
-            <td>Producto</td>
-            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
-            <td>$500</td>
-            <td>10</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.precio}}</td>
+            <td>{{item.stock}}</td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
               <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
             </td>
           </tr>
-          <tr>
-            <td>Producto</td>
-            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
-            <td>$500</td>
-            <td>10</td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Producto</td>
-            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
-            <td>$500</td>
-            <td>10</td>
-            <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
+    {% else %}
+      <h1 class="titulo-azul">Aún no Hay Productos Registrados!</h1>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
