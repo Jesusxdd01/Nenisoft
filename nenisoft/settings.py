@@ -86,9 +86,9 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nenisoft',
-        'USER': 'userD',
-        'PASSWORD': '123456',
+        'NAME': 'base11',
+        'USER': 'user10',
+        'PASSWORD': 'abc12345',
         'HOST': 'localhost',
         'PORT': '3306'
     }

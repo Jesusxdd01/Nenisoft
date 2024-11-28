@@ -114,12 +114,12 @@ header{
 .nav-bar ul li a{
     display: block;
     color: var(--morado);
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px 25px;
     border-radius: 15px;
     transition: 0.2s;
     margin: 0 5px;
-    font-weight: bold;
+    font-weight: bolder;
 }
 .nav-bar ul li a.active{
     color: var(--blanco);
@@ -353,7 +353,7 @@ footer .wave#wave4{
 }
 
 .titulo-pregunta{
-    color: var(--primario);
+    color: var(--morado);
     font-size: 3rem;
 }
 .icono-pregunta-info {
@@ -388,6 +388,12 @@ footer .wave#wave4{
 .titulo-MVO, .parrafo-MVO{
     text-align: center;
 }
+.div-captura-sombra{
+    border-radius: 24px 24px 24px 24px;
+    border: 2px solid var(--morado);
+    padding: 20px;
+    box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+}
 @media (min-width: 768px) {
     .pregunta-info{
         display: grid;
@@ -413,6 +419,149 @@ footer .wave#wave4{
         grid-template-columns: auto;
     }
 }
+
+/* Planes */
+.div-texto-planes{
+    margin: 50px;
+}
+.titulo{
+    color: var(--morado);
+}
+.body-planes {
+    margin: 30px;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+  
+.cards {
+    display: flex;
+    gap: 30px;
+}
+  
+article {
+    position: relative;
+    perspective: 1000px;
+    width: 340px;
+    height: 350px;    
+}
+  
+article .front,
+article .back {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    backdrop-filter: blur(10px);
+    background: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.05) 0px 8px 14px;
+    border-radius: 20px;
+    padding: 32px;
+    transition: 0.6s;
+    cursor: pointer;
+    border: solid;
+    border-radius: 25px;
+}
+article .back{
+    padding: 0px;
+}  
+.back {
+    transform: rotateY(180deg);
+}
+  
+.back li {
+    font-size: 15px;
+    list-style-type: disc;  /* Agrega viñetas */
+    margin-left: 0px;      /* Indentación para las viñetas */
+    text-align: justify;    /* Texto justificado */
+}
+
+  
+article .material-symbols-outlined {
+    width: 100px;
+    height: 76px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+}
+  
+.input-check{
+    position: absolute;
+    scale: 0;
+}
+  
+input:checked ~ article .back {
+    transform: rotateY(0);
+}
+  
+input:checked ~ article .front {
+    transform: rotateY(-180deg);
+}
+  
+article var {
+    font-style: normal;
+    font-size: 30px;
+    line-height: 1;
+}
+  
+article h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 22px;
+    color: #b2b5c2;
+}
+  
+#sent {
+    color: #643fe1;
+}
+  
+#sent span {
+    background: #edebfb;
+}
+  
+#leads {
+    color: #b02ce1;
+}
+  
+#leads span {
+    background: #f7e8ff;
+}
+  
+#convos {
+    color: #3ac2f0;
+}
+  
+#convos span {
+    background: #eef9ff;
+}
+
+@media (max-width: 1140px) {
+    .cards {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    article {
+        flex: 1 1 calc(50% - 40px);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 752px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    article {
+        flex: 1 1 100%;
+    }
+}
+
+
 
 /*Login*/
 .card {
