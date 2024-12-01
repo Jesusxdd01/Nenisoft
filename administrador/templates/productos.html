@@ -21,7 +21,7 @@
   <div class="card-body">
     <br>
 
-    <a class="btn-morado rounded-pill" href="#">Nuevo Producto</a> <br><br><br>
+    <a class="btn-morado rounded-pill" href="{% url 'productoCreate' %}">Nuevo Producto</a> <br><br><br>
 
     {% if productos %}
     <div class="table-responsive">
@@ -43,8 +43,8 @@
             <td>{{item.precio}}</td>
             <td>{{item.stock}}</td>
             <td>
-              <a class="btn btn-secondary rounded-pill" href="#">Editar</a>
-              <a class="btn btn-danger rounded-pill" href="#">Eliminar</a>
+              <a class="btn btn-secondary rounded-pill" href="{% url 'productoUpdate' item.id %}">Editar</a>
+              <a class="btn btn-danger rounded-pill" href="{% url 'productoDelete' item.id %}">Eliminar</a>
             </td>
           </tr>
           {% endfor %}

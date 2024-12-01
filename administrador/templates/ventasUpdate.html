@@ -1,0 +1,19 @@
+{% extends "baseAdministrador.html" %}
+
+{% load static %}
+
+{% block tituloAdministrador %}
+  <title>Nuevo venta</title>
+{% endblock %}
+
+{% block contenidoAdmin %}
+
+    <h4 style="color: blue;">Capturando venta, ingresa datos: </h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'ventas'%}" class="btn btn-secondary">Cancelar</a>
+    </form>
+
+{% endblock %}

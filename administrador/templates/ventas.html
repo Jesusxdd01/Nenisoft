@@ -45,9 +45,16 @@
             <td>{{item.cuotasRestantes}}</td>
             <td>{{item.importePagado}}</td>
             <td>{{item.importeRestante}}</td>
-            <td>
-              <a class="btn btn-warning rounded-pill" href="#">Sumar Pago</a>
-              <a class="btn btn-success rounded-pill" href="#">Pago Completo</a>
+            <td id="opciones-{{ item.id }}">
+              {% if item.importeRestante == 0 %}
+                <p>Pago completado</p>
+              {% else %}
+                <a class="btn btn-warning rounded-pill" href="{% url 'ventaUpdate' item.id %}">Sumar Pago</a>
+                <form action="{% url 'ventaPagada' item.id %}" method="post" style="display:inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-success rounded-pill">Pago Completo</button>
+                </form>
+              {% endif %}
             </td>
           </tr>
           {% endfor %}

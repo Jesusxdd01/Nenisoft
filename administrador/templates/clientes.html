@@ -41,8 +41,8 @@
             <td>{{ item.email }}</td>
             <td>{{ item.telefono }}</td>
             <td>
-              <a class="btn btn-warning rounded-pill" href="#">Pedidos</a>
-              <a class="btn btn-success rounded-pill" href="#">Ventas</a>
+              <a class="btn btn-warning rounded-pill" href="{% url 'pedidosCliente' item.id %}">Pedidos</a>
+              <a class="btn btn-success rounded-pill" href="{% url 'ventasCliente' item.id %}">Ventas</a>
             </td>
             <td>
               <a class="btn btn-secondary rounded-pill" href="{% url 'clienteUpdate' item.id %}">Editar</a>

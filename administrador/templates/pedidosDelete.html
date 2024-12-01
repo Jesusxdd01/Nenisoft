@@ -1,0 +1,18 @@
+{% extends "baseAdministrador.html" %}
+
+{% load static %}
+
+{% block tituloAdministrador %}
+  <title>Delete pedido</title>
+{% endblock %}
+
+{% block contenidoAdmin %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h3>¿Estás seguro de eliminar el pedido {{ pedido.clave }}?</h3>
+    <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+    <a href="{% url 'clientes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}
